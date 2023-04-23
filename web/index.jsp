@@ -10,8 +10,6 @@
 
 <!DOCTYPE html>
 <html>
-
-
 <head>
     <title>商品列表</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
