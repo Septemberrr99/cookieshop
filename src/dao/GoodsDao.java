@@ -117,11 +117,15 @@ public class GoodsDao {
         QueryRunner r = new QueryRunner(DBUtil.getDataSource());
         String sql = "insert into goods(name,cover,image1,image2,price,intro,stock,taste,type_id) values(?,?,?,?,?,?,?,?,?)";
         r.update(sql,g.getName(),g.getCover(),g.getImage1(),g.getImage2(),g.getPrice(),g.getIntro(),g.getStock(),g.getTaste(),g.getType().getId());
+//        String sql = "insert into goods(name,cover,image1,image2,price,intro,taste,type_id) values(?,?,?,?,?,?,?,?)";
+//        r.update(sql,g.getName(),g.getCover(),g.getImage1(),g.getImage2(),g.getPrice(),g.getIntro(),g.getTaste(),g.getType().getId());
     }
     public void update(Goods g) throws SQLException {
         QueryRunner r = new QueryRunner(DBUtil.getDataSource());
         String sql = "update goods set name=?,cover=?,image1=?,image2=?,price=?,intro=?,stock=?,taste=?,type_id=? where id=?";
         r.update(sql,g.getName(),g.getCover(),g.getImage1(),g.getImage2(),g.getPrice(),g.getIntro(),g.getStock(),g.getTaste(),g.getType().getId(),g.getId());
+//        String sql = "update goods set name=?,cover=?,image1=?,image2=?,price=?,intro=?,taste=?,type_id=? where id=?";
+//        r.update(sql,g.getName(),g.getCover(),g.getImage1(),g.getImage2(),g.getPrice(),g.getIntro(),g.getTaste(),g.getType().getId(),g.getId());
     }
     public void delete(int id) throws SQLException {
         QueryRunner r = new QueryRunner(DBUtil.getDataSource());

@@ -90,11 +90,26 @@
 		<c:if test="${order.status==3 }">
 			<a class="btn btn-warning" href="${pageContext.request.contextPath}/admin/order_status?id=${order.id }&status=4">完成</a>
 		</c:if>
-		<a class="btn btn-danger" href="${pageContext.request.contextPath}/admin/order_delete?id=${order.id }&pageNumber=${p.pageNumber}&status=${status}">删除</a>
+		<a class="btn btn-danger" href="${pageContext.request.contextPath}/admin/order_delete?id=${order.id }&pageNumber=${p.pageNumber}&status=${status}" onclick="confirmDelete(${order.id},${p.pageNumber},'${status}')">删除</a>
 		</td>
 		</tr>
 		</c:forEach>
-	
+
+		<script>
+			function confirmDelete(orderId, pageNumber, status) {
+				// 弹出提示框，并获取用户点击的按钮
+				var confirmed = confirm("确认删除吗？");
+
+				// 如果用户点击了确定按钮，执行删除操作
+				if (confirmed) {
+					// 构造删除订单的 URL
+					var deleteUrl = "${pageContext.request.contextPath}/admin/order_delete?id=" + orderId + "&pageNumber=" + pageNumber + "&status=" + status;
+
+					// 执行删除操作
+					window.location.href = deleteUrl;
+				}
+			}
+		</script>
      
 </table>
 

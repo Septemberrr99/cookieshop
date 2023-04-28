@@ -39,6 +39,9 @@ public class AdminGoodsAddServlet extends HttpServlet {
                         case "price":
                             g.setPrice(Integer.parseInt(item.getString("utf-8")));
                             break;
+                        case "taste":
+                            g.setTaste(item.getString("utf-8"));
+                            break;
                         case "intro":
                             g.setIntro(item.getString("utf-8"));
                             break;

@@ -35,6 +35,12 @@
 			</div>
 		</div>
 		<div class="form-group">
+			<label for="input_name" class="col-sm-1 control-label">口味</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="input_name" name="taste" >
+			</div>
+		</div>
+		<div class="form-group">
 			<label for="input_name" class="col-sm-1 control-label">库存</label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control" id="input_name" name="stock" >

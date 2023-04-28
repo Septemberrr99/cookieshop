@@ -45,10 +45,26 @@
 				<td><p>${t.name }</p></td>
 				<td>
 					<a class="btn btn-primary" href="${pageContext.request.contextPath}/admin/type_edit.jsp?id=${t.id }&name=${t.encodeName }">修改</a>
-					<a class="btn btn-danger" href="${pageContext.request.contextPath}/admin/type_delete?id=${t.id }">删除</a>
+					<a class="btn btn-danger" href="${pageContext.request.contextPath}/admin/type_delete?id=${t.id }" onclick="confirmDelete(${t.id})">删除</a>
 				</td>
 			</tr>
 		</c:forEach>
+
+		<script>
+			function confirmDelete(id) {
+				// 弹出提示框，并获取用户点击的按钮
+				var confirmed = confirm("确认删除吗？");
+
+				// 如果用户点击了确定按钮，执行删除操作
+				if (confirmed) {
+					// 构造删除分类的 URL
+					var deleteUrl = "${pageContext.request.contextPath}/admin/type_delete?id=" + id;
+
+					// 执行删除操作
+					window.location.href = deleteUrl;
+				}
+			}
+		</script>
 
 
 	</table>

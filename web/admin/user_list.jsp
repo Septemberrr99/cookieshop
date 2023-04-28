@@ -52,12 +52,28 @@
 				<td>
 					<a class="btn btn-info" href="${pageContext.request.contextPath}/admin/user_reset.jsp?id=${u.id }&username=${u.username }&email=${u.email }">重置密码</a>
 					<a class="btn btn-primary" href="${pageContext.request.contextPath}/admin/user_editshow?id=${u.id }">修改</a>
-					<a class="btn btn-danger" href="${pageContext.request.contextPath }/admin/user_delete?id=${u.id }">删除</a>
+					<a class="btn btn-danger" href="${pageContext.request.contextPath }/admin/user_delete?id=${u.id }" onclick="confirmDelete(${u.id})">删除</a>
 				</td>
 			</tr>
 		</c:forEach>
-     
-     
+
+		<script>
+			function confirmDelete(id) {
+				// 弹出提示框，并获取用户点击的按钮
+				var confirmed = confirm("确认删除吗？");
+
+				// 如果用户点击了确定按钮，执行删除操作
+				if (confirmed) {
+					// 构造删除用户的 URL
+					var deleteUrl = "${pageContext.request.contextPath}/admin/user_delete?id=" + id;
+
+					// 执行删除操作
+					window.location.href = deleteUrl;
+				}
+			}
+		</script>
+
+
 </table>
 
 <br>
