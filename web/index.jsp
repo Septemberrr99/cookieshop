@@ -90,7 +90,7 @@
                     <div class="gallery-info">
                         <p>
                             <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>
-                            <a href="/goods_detail?id=${g.id}">查看详情</a>
+                            <a href="${pageContext.request.contextPath}/goods_detail?id=${g.id}">查看详情</a>
                         </p>
                         <a class="shop" href="javascript:;" onclick="buy(${g.id})">立刻购买</a>
                         <div class="clearfix"> </div>

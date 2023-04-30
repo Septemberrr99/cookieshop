@@ -81,22 +81,6 @@ function submitOrder() {
 
 
 
-// // 将时间格式化为更美观的形式
-//     var date = new Date(dt);
-//     var formattedDate = date.getFullYear() + (date.getMonth() + 1) + '/' + date.getDate() + '/' ;
-//     var hours = date.getHours();
-//     var minutes = date.getMinutes();
-//     var ampm = hours >= 12 ? 'PM' : 'AM';
-//     hours = hours % 12;
-//     hours = hours ? hours : 12;
-//     minutes = minutes < 10 ? '0'+minutes : minutes;
-//     var formattedTime = hours + ':' + minutes + ' ' + ampm;
-//
-// // 将格式化后的时间更新到输入框中
-// //     document.getElementById("delivery-time").value = formattedDate + ' ' + formattedTime;
-//     var delivertime = formattedDate + ' ' + formattedTime;
-
-
     // 判断用户是否选择了送达时间
     if (!delivertime) {
         alert("请选择送达时间");
@@ -120,4 +104,6 @@ function submitOrder() {
         }
     };
 }
+
+
 

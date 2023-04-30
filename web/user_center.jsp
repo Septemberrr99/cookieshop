@@ -42,7 +42,8 @@
 						</div>
 						<div class="input">
 							<span>收货电话</span>
-							<input type="text" name="phone" value="${user.phone }" placeholder="请输入收货电话"> 
+							<input type="text" name="phone" value="${user.phone }" placeholder="请输入收货电话" pattern="^[1][3-9][0-9]{9}$">
+							<p id="phone-error" style="color:red; display:none;">请输入有效的手机号码</p>
 						</div>
 						<div class="input">
 							<span>收货地址</span>
@@ -76,6 +77,27 @@
 	    </div>
 	</div>
 	<!--//account-->
+	<script>
+		const emailInput = document.querySelector('input[name="email"]');
+		const emailError = document.querySelector('#email-error');
+		emailInput.addEventListener('input', () => {
+			if (!emailInput.validity.valid) {
+				emailError.style.display = 'block';
+			} else {
+				emailError.style.display = 'none';
+			}
+		});
+
+		const phoneInput = document.querySelector('input[name="phone"]');
+		const phoneError = document.querySelector('#phone-error');
+		phoneInput.addEventListener('input', () => {
+			if (!phoneInput.validity.valid) {
+				phoneError.style.display = 'block';
+			} else {
+				phoneError.style.display = 'none';
+			}
+		});
+	</script>
 
 	
 

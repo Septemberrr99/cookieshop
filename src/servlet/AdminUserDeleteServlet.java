@@ -18,6 +18,7 @@ public class AdminUserDeleteServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         boolean isSuccess = uService.delete(id);
+        System.out.println(isSuccess);
         if(isSuccess) {
             request.setAttribute("msg", "客户删除成功");
         }else {

@@ -26,9 +26,11 @@ public class UserService {
         return false;
     }
 
+
     public User login(String ue,String password) {
         User user=null;
         try {
+            //根据用户名登录
             user = uDao.selectByUsernamePassword(ue, password);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
@@ -38,6 +40,7 @@ public class UserService {
             return user;
         }
         try {
+            //根据邮箱登录
             user=uDao.selectByEmailPassword(ue, password);
         } catch (SQLException e) {
             // TODO Auto-generated catch block

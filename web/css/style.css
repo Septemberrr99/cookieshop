@@ -508,6 +508,8 @@ span.glyphicon.glyphicon-eye-open {
 }
 .gallery-grid img {
     border: 1px solid #eee;
+    width: 350px;
+    height: 350px;
 }
 .gallery-grids {
     margin-top: 3em;

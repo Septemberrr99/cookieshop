@@ -39,7 +39,8 @@
 						</div>
 						<div class="input">
 							<span>邮箱 <label style="color:red;">*</label></span>
-							<input type="text" name="email" placeholder="请输入邮箱" required="required">
+							<input type="text" name="email" placeholder="请输入邮箱" required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+							<p id="email-error" style="color:red; display:none;">请输入有效的邮箱地址</p>
 						</div>
 						<div class="input">
 							<span>密码 <label style="color:red;">*</label></span>
@@ -51,7 +52,8 @@
 						</div>
 						<div class="input">
 							<span>收货电话<label></label></span>
-							<input type="text" name="phone" placeholder="请输入收货电话">
+							<input type="text" name="phone" placeholder="请输入收货电话" pattern="^[1][3-9][0-9]{9}$">
+							<p id="phone-error" style="color:red; display:none;">请输入有效的手机号码</p>
 						</div>
 						<div class="input">
 							<span>收货地址<label></label></span>
@@ -69,8 +71,28 @@
 	    </div>
 	</div>
 	<!--//account-->
+	<script>
+		const emailInput = document.querySelector('input[name="email"]');
+		const emailError = document.querySelector('#email-error');
+		emailInput.addEventListener('input', () => {
+			if (!emailInput.validity.valid) {
+				emailError.style.display = 'block';
+			} else {
+				emailError.style.display = 'none';
+			}
+		});
 
-	
+		const phoneInput = document.querySelector('input[name="phone"]');
+		const phoneError = document.querySelector('#phone-error');
+		phoneInput.addEventListener('input', () => {
+			if (!phoneInput.validity.valid) {
+				phoneError.style.display = 'block';
+			} else {
+				phoneError.style.display = 'none';
+			}
+		});
+	</script>
+
 
 
 
