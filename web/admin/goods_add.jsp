@@ -25,25 +25,25 @@
 		<div class="form-group">
 			<label for="input_name" class="col-sm-1 control-label">价格</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="input_name" name="price" >
+				<input type="text" class="form-control" id="input_name" name="price"  required="required">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="input_name" class="col-sm-1 control-label">介绍</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="input_name" name="intro" >
+				<input type="text" class="form-control" id="input_name" name="intro" required="required">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="input_name" class="col-sm-1 control-label">口味</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="input_name" name="taste" >
+				<input type="text" class="form-control" id="input_name" name="taste" required="required">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="input_name" class="col-sm-1 control-label">库存</label>
 			<div class="col-sm-6">
-				<input type="text" class="form-control" id="input_name" name="stock" >
+				<input type="text" class="form-control" id="input_name" name="stock" required="required">
 			</div>
 		</div>
 		<div class="form-group">

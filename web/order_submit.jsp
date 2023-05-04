@@ -41,7 +41,8 @@
 				<div class="row">
 					<label class="control-label col-md-1">收货电话</label>
 					<div class="col-md-6">
-						<input type="text" class="form-control" name="phone" value="${user.phone }" style="height:auto;padding:10px;" placeholder="输入收货电话" required="required"><br>
+						<input type="text" name="phone" placeholder="请输入收货电话" pattern="^[1][3-9][0-9]{9}$">
+						<p id="phone-error" style="color:red; display:none;">请输入有效的手机号码</p>
 					</div>
 				</div>
 				<div class="row">
@@ -83,14 +84,14 @@
 						</div>
 					</label>
 				</div>
-				<div class="col-sm-6 col-md-4 col-lg-3 ">
-					<label>
-						<div class="thumbnail">
-							<input type="radio" name="paytype" value="3"  />
-							<img src="images/offline.jpg" alt="货到付款">
-						</div>
-					</label>
-				</div>
+<%--				<div class="col-sm-6 col-md-4 col-lg-3 ">--%>
+<%--					<label>--%>
+<%--						<div class="thumbnail">--%>
+<%--							<input type="radio" name="paytype" value="3"  />--%>
+<%--							<img src="images/offline.jpg" alt="货到付款">--%>
+<%--						</div>--%>
+<%--					</label>--%>
+<%--				</div>--%>
 				<div class="clearfix"> </div>
 				<div class="register-but text-center">
 					<input type="submit" value="确认订单" id="submit-btn" onclick="submitOrder()">
@@ -114,34 +115,7 @@
 			$("#paytype").val(paytype);
 			$("#payform").submit();
 		}
-		// // 获取页面元素
-		// const deliveryTimeInput = document.querySelector('#delivery-time');
-		// const submitBtn = document.querySelector('#submit-btn');
-		//
-		// // 提交订单
-		// submitBtn.addEventListener('click', () => {
-		// 	const deliveryTime = deliveryTimeInput.value;
-		//
-		// // 判断是否选择了送达时间
-		// if (deliveryTime === '') {
-		// 	alert('请选择送达时间！');
-		// 	return;
-		// }
-		//
-		// // 发送Ajax请求
-		// const xhr = new XMLHttpRequest();
-		// xhr.open('POST', '/submitOrder');
-		// xhr.setRequestHeader('Content-Type', 'application/json');
-		// xhr.onreadystatechange = function() {
-		// 	if (xhr.readyState === 4 && xhr.status === 200) {
-		// 		alert('订单提交成功！');
-		// 	}
-		// };
-		// const data = {
-		// 	deliveryTime: deliveryTime
-		// };
-		// xhr.send(JSON.stringify(data));
-		// });
+
 	</script>
 
 </body>

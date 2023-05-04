@@ -22,7 +22,7 @@
 
 	<ul role="tablist" class="nav nav-tabs">
 		<li <c:if test="${status==0 }">class="active"</c:if> role="presentation"><a href="${pageContext.request.contextPath}/admin/order_list">全部订单</a></li>
-		<li <c:if test="${status==1 }">class="active"</c:if> role="presentation"><a href="${pageContext.request.contextPath}/admin/order_list?status=1">未付款</a></li>
+<%--		<li <c:if test="${status==1 }">class="active"</c:if> role="presentation"><a href="${pageContext.request.contextPath}/admin/order_list?status=1">未付款</a></li>--%>
 		<li <c:if test="${status==2 }">class="active"</c:if> role="presentation"><a href="${pageContext.request.contextPath}/admin/order_list?status=2">已付款</a></li>
 		<li <c:if test="${status==3 }">class="active"</c:if> role="presentation"><a href="${pageContext.request.contextPath}/admin/order_list?status=3">配送中</a></li>
 		<li <c:if test="${status==4 }">class="active"</c:if> role="presentation"><a href="${pageContext.request.contextPath}/admin/order_list?status=4">已完成</a></li>
@@ -68,25 +68,24 @@
 						<c:if test="${order.status==2 }"><span style="color:red;">已付款</span></c:if>
 						<c:if test="${order.status==3 }"><span style="color:green;">已发货</span></c:if>
 						<c:if test="${order.status==4 }"><span style="color:black;">已完成</span></c:if>
-
 					</p>
 				</td>
 				<td>
 					<p>
-
 						<c:if test="${order.paytype==1 }">微信</c:if>
 						<c:if test="${order.paytype==2 }">支付宝</c:if>
 						<c:if test="${order.paytype==3 }">货到付款</c:if>
 
 					</p>
 				</td>
+
 				<td><p>${order.user.username }</p></td>
 				<td><p>${order.datetime }</p></td>
 				<td>
-					<c:if test="${order.status==2 }">
-
-						<a class="btn btn-success" href="${pageContext.request.contextPath}/admin/order_status?id=${order.id }&status=3">发货</a>
+		<c:if test="${order.status==2 }">
+			<a class="btn btn-success" href="${pageContext.request.contextPath}/admin/order_status?id=${order.id }&status=3">发货</a>
 		</c:if>
+
 		<c:if test="${order.status==3 }">
 			<a class="btn btn-warning" href="${pageContext.request.contextPath}/admin/order_status?id=${order.id }&status=4">完成</a>
 		</c:if>
