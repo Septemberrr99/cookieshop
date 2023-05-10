@@ -16,6 +16,13 @@
 	<div class="text-right"><a class="btn btn-warning" href="${pageContext.request.contextPath}/admin/goods_add.jsp">添加商品</a></div>
 
 	<br>
+	<c:if test="${!empty msg }">
+		<div class="alert alert-success">${msg }</div>
+	</c:if>
+	<c:if test="${!empty failMsg }">
+		<div class="alert alert-danger">${failMsg }</div>
+	</c:if>
+	<br>
 
 	<ul role="tablist" class="nav nav-tabs">
 		<li <c:if test="${type==0 }">class="active"</c:if> role="presentation"><a href="${pageContext.request.contextPath}/admin/goods_list">全部商品</a></li>

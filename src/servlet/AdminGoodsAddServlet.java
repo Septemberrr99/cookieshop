@@ -82,11 +82,15 @@ public class AdminGoodsAddServlet extends HttpServlet {
                 }
             }
             gService.insert(g);
+            request.setAttribute("msg", "商品添加成功！");
             request.getRequestDispatcher("/admin/goods_list").forward(request, response);
+
+            request.getRequestDispatcher("/admin/goods_add").forward(request, response);
         } catch (FileUploadException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
+
     }
 
     /**

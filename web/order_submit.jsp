@@ -117,6 +117,27 @@
 		}
 
 	</script>
+	<script>
+		const emailInput = document.querySelector('input[name="email"]');
+		const emailError = document.querySelector('#email-error');
+		emailInput.addEventListener('input', () => {
+			if (!emailInput.validity.valid) {
+				emailError.style.display = 'block';
+			} else {
+				emailError.style.display = 'none';
+			}
+		});
+
+		const phoneInput = document.querySelector('input[name="phone"]');
+		const phoneError = document.querySelector('#phone-error');
+		phoneInput.addEventListener('input', () => {
+			if (!phoneInput.validity.valid) {
+				phoneError.style.display = 'block';
+			} else {
+				phoneError.style.display = 'none';
+			}
+		});
+	</script>
 
 </body>
 </html>

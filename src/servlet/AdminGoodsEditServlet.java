@@ -102,7 +102,10 @@ public class AdminGoodsEditServlet extends HttpServlet {
                 }
             }
             gService.update(g);
+            request.setAttribute("msg", "商品信息更新成功！");
             request.getRequestDispatcher("/admin/goods_list?pageNumber="+pageNumber+"&type="+type).forward(request, response);
+            request.getRequestDispatcher("/admin/goods_list").forward(request, response);
+            request.getRequestDispatcher("/admin/goods_edit").forward(request, response);
         } catch (FileUploadException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

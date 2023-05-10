@@ -37,6 +37,22 @@ public class GoodsDao {
             return  r.query(sql,new BeanListHandler<Goods>(Goods.class),typeID,(pageNumber-1)*pageSize,pageSize);
         }
     }
+
+    public List<Goods> selectGoodsByTypeIDDesc(int typeID,int pageNumber,int pageSize) throws SQLException {
+        if(typeID==0)
+        {
+            String sql="select * from goods order by id desc limit ? , ?";
+            QueryRunner r=new QueryRunner(DBUtil.getDataSource());
+            return  r.query(sql,new BeanListHandler<Goods>(Goods.class),(pageNumber-1)*pageSize,pageSize);
+        }
+        else
+        {
+            String sql="select * from goods where type_id=? order by id desc limit ? , ?";
+            QueryRunner r=new QueryRunner(DBUtil.getDataSource());
+            return  r.query(sql,new BeanListHandler<Goods>(Goods.class),typeID,(pageNumber-1)*pageSize,pageSize);
+        }
+    }
+
     public int getCountOfGoodsByTypeID(int typeID) throws SQLException {
         String sql="";
         QueryRunner r=new QueryRunner(DBUtil.getDataSource());

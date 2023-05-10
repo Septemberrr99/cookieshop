@@ -31,6 +31,7 @@ public class GoodsService {
         }
         return scroolGood;
     }
+
     public List<Goods> selectGoodsByTypeID(int typeID, int pageNumber, int pageSize)
     {
         List<Goods> list=null;
@@ -56,6 +57,7 @@ public class GoodsService {
         List list=null;
         try {
             list=gDao.selectGoodsByTypeID(typeID,pageNumber,8);
+//            list=gDao.selectGoodsByTypeIDDesc(typeID,pageNumber,8);
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -63,6 +65,31 @@ public class GoodsService {
         p.setList(list);
         return p;
     }
+
+    public Page selectGoodsByTypeIDDesc(int typeID,int pageNumber)
+    {
+        Page p=new Page();
+        p.setPageNumber(pageNumber);
+        int totalCount=0;
+        try {
+            totalCount=gDao.getCountOfGoodsByTypeID(typeID);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        p.SetPageSizeAndTotalCount(8,totalCount);
+
+        List list=null;
+        try {
+//            list=gDao.selectGoodsByTypeID(typeID,pageNumber,8);
+            list=gDao.selectGoodsByTypeIDDesc(typeID,pageNumber,8);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        p.setList(list);
+        return p;
+    }
+
     public Page getGoodsRecommendPage(int type,int pageNumber) {
         Page p = new Page();
         p.setPageNumber(pageNumber);

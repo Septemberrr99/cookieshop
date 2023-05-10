@@ -19,6 +19,7 @@ public class AdminTypeAddServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("name");
         tService.insert(new Type(name));
+        request.setAttribute("msg", "添加成功");
         request.getRequestDispatcher("/admin/type_list").forward(request, response);
     }
 

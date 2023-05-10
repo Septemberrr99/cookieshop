@@ -26,6 +26,7 @@ public class AdminTypeEditServlet extends HttpServlet {
             e.printStackTrace();
         }
         tService.update(t);
+        request.setAttribute("msg", "修改成功");
         request.getRequestDispatcher("/admin/type_list").forward(request, response);
     }
 
